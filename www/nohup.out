@@ -1,0 +1,9142 @@
+nohup: ignoring input
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2026-01-14T06:39:07.361Z  INFO 946594 --- [lms-project] [           main] com.mysite.sbb.LmsProjectApplication     : Starting LmsProjectApplication v0.0.1-SNAPSHOT using Java 17.0.17 with PID 946594 (/var/lib/tomcat9/webapps/ROOT.war started by ubuntu in /home/ubuntu)
+2026-01-14T06:39:07.369Z  INFO 946594 --- [lms-project] [           main] com.mysite.sbb.LmsProjectApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-01-14T06:39:09.890Z  INFO 946594 --- [lms-project] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-14T06:39:10.024Z  INFO 946594 --- [lms-project] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 120 ms. Found 11 JPA repository interfaces.
+2026-01-14T06:39:11.285Z  INFO 946594 --- [lms-project] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8000 (http)
+2026-01-14T06:39:11.309Z  INFO 946594 --- [lms-project] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-14T06:39:11.310Z  INFO 946594 --- [lms-project] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-01-14T06:39:11.368Z  INFO 946594 --- [lms-project] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-14T06:39:11.370Z  INFO 946594 --- [lms-project] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3270 ms
+2026-01-14T06:39:11.745Z  INFO 946594 --- [lms-project] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-14T06:39:11.821Z  INFO 946594 --- [lms-project] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2026-01-14T06:39:11.872Z  INFO 946594 --- [lms-project] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-01-14T06:39:12.464Z  INFO 946594 --- [lms-project] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-14T06:39:12.509Z  INFO 946594 --- [lms-project] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-01-14T06:39:12.946Z  INFO 946594 --- [lms-project] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:~/local user=SA
+2026-01-14T06:39:12.951Z  INFO 946594 --- [lms-project] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-01-14T06:39:12.991Z  WARN 946594 --- [lms-project] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-14T06:39:13.032Z  INFO 946594 --- [lms-project] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-14T06:39:15.078Z  INFO 946594 --- [lms-project] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    alter table if exists enrollment 
+       drop constraint if exists UK4po525nh6ipqn6s8ngc1sdpjo
+Hibernate: 
+    alter table if exists enrollment 
+       add constraint UK4po525nh6ipqn6s8ngc1sdpjo unique (classes_id, uno)
+2026-01-14T06:39:15.220Z  INFO 946594 --- [lms-project] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-14T06:39:15.973Z  INFO 946594 --- [lms-project] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-14T06:39:22.602Z  WARN 946594 --- [lms-project] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-14T06:39:23.121Z  INFO 946594 --- [lms-project] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userSecurityService
+2026-01-14T06:39:23.882Z  INFO 946594 --- [lms-project] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:~/local'
+2026-01-14T06:39:24.044Z  INFO 946594 --- [lms-project] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8000 (http) with context path '/'
+2026-01-14T06:39:24.068Z  INFO 946594 --- [lms-project] [           main] com.mysite.sbb.LmsProjectApplication     : Started LmsProjectApplication in 17.835 seconds (process running for 18.832)
+2026-01-14T06:39:29.057Z  INFO 946594 --- [lms-project] [nio-8000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-14T06:39:29.057Z  INFO 946594 --- [lms-project] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-14T06:39:29.059Z  INFO 946594 --- [lms-project] [nio-8000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    left join
+        enrollment e1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.uno=? 
+        and (
+            ? is null 
+            or c1_0.level_id=?
+        ) 
+        and (
+            ? is null 
+            or lower(c1_0.title) like lower(('%'||?||'%')) escape ''
+        ) 
+    group by
+        c1_0.classes_id 
+    order by
+        count(e1_0.enrollment_id) desc,
+        c1_0.created_date desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+2026-01-14T12:02:12.822Z  INFO 946594 --- [lms-project] [nio-8000-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03}`20x1a0xe30x0c=0xa90xb9e ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+2026-01-14T12:12:04.427Z  INFO 946594 --- [lms-project] [nio-8000-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x03_K0xb4;0xc8QR?20xff20xbf*/U0xe30x1b0x040xb10xe80xc90x9f\0x890xe10xb90x8a0x1e0xda0xc70xcf0x1d ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+2026-01-14T13:00:23.570Z  INFO 946594 --- [lms-project] [nio-8000-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x020x000x010x000x010xfc0x030x030xa0/k0x05%|0xc2`40xcf0x0f0x1d#@0x960xd35D0x990x02W0xec0xce0xb70xb10xbf-0x000x80/0xee0x0f ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:403) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:271) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        (
+            ?='ALL' 
+            or cast(u1_0.role as varchar)=?
+        ) 
+        and (
+            lower(u1_0.user_name) like ? escape '' 
+            or lower(u1_0.user_id) like ? escape '' 
+            or lower(u1_0.email) like ? escape ''
+        ) 
+    order by
+        u1_0.user_cdate desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        (
+            ?='ALL' 
+            or cast(u1_0.role as varchar)=?
+        ) 
+        and (
+            lower(u1_0.user_name) like ? escape '' 
+            or lower(u1_0.user_id) like ? escape '' 
+            or lower(u1_0.email) like ? escape ''
+        )
+Hibernate: 
+    select
+        distinct bq1_0.board_ques_id,
+        bq1_0.class_id,
+        bq1_0.ques_content,
+        bq1_0.ques_date,
+        bq1_0.title,
+        bq1_0.uno 
+    from
+        board_question bq1_0 
+    order by
+        bq1_0.ques_date desc 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        a1_0.board_ques_id,
+        a1_0.board_answ_id,
+        a1_0.answ_content,
+        a1_0.answ_date,
+        a1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        board_answer a1_0 
+    left join
+        site_user u1_0 
+            on u1_0.uno=a1_0.uno 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        a1_0.board_ques_id=?
+Hibernate: 
+    select
+        a1_0.board_ques_id,
+        a1_0.board_answ_id,
+        a1_0.answ_content,
+        a1_0.answ_date,
+        a1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        board_answer a1_0 
+    left join
+        site_user u1_0 
+            on u1_0.uno=a1_0.uno 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        a1_0.board_ques_id=?
+Hibernate: 
+    select
+        a1_0.board_ques_id,
+        a1_0.board_answ_id,
+        a1_0.answ_content,
+        a1_0.answ_date,
+        a1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        board_answer a1_0 
+    left join
+        site_user u1_0 
+            on u1_0.uno=a1_0.uno 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        a1_0.board_ques_id=?
+Hibernate: 
+    select
+        bq1_0.board_ques_id,
+        bq1_0.class_id,
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name,
+        bq1_0.ques_content,
+        bq1_0.ques_date,
+        bq1_0.title,
+        bq1_0.uno,
+        u2_0.uno,
+        u2_0.approved,
+        u2_0.email,
+        u2_0.end_date,
+        u2_0.is_paid,
+        l3_0.level_id,
+        l3_0.level_name,
+        u2_0.password,
+        u2_0.role,
+        u2_0.user_cdate,
+        u2_0.user_id,
+        u2_0.user_name 
+    from
+        board_question bq1_0 
+    join
+        classes c1_0 
+            on c1_0.classes_id=bq1_0.class_id 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    join
+        site_user u2_0 
+            on u2_0.uno=bq1_0.uno 
+    left join
+        level l3_0 
+            on l3_0.level_id=u2_0.level_id 
+    where
+        bq1_0.board_ques_id=?
+Hibernate: 
+    select
+        ba1_0.board_answ_id,
+        ba1_0.answ_content,
+        ba1_0.answ_date,
+        ba1_0.board_ques_id,
+        ba1_0.uno 
+    from
+        board_answer ba1_0 
+    left join
+        board_question q1_0 
+            on q1_0.board_ques_id=ba1_0.board_ques_id 
+    where
+        q1_0.board_ques_id=?
+Hibernate: 
+    select
+        distinct bq1_0.board_ques_id,
+        bq1_0.class_id,
+        bq1_0.ques_content,
+        bq1_0.ques_date,
+        bq1_0.title,
+        bq1_0.uno 
+    from
+        board_question bq1_0 
+    order by
+        bq1_0.ques_date desc 
+    offset
+        ? rows 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        a1_0.board_ques_id,
+        a1_0.board_answ_id,
+        a1_0.answ_content,
+        a1_0.answ_date,
+        a1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        board_answer a1_0 
+    left join
+        site_user u1_0 
+            on u1_0.uno=a1_0.uno 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        a1_0.board_ques_id=?
+Hibernate: 
+    select
+        a1_0.board_ques_id,
+        a1_0.board_answ_id,
+        a1_0.answ_content,
+        a1_0.answ_date,
+        a1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        board_answer a1_0 
+    left join
+        site_user u1_0 
+            on u1_0.uno=a1_0.uno 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        a1_0.board_ques_id=?
+Hibernate: 
+    select
+        a1_0.board_ques_id,
+        a1_0.board_answ_id,
+        a1_0.answ_content,
+        a1_0.answ_date,
+        a1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        board_answer a1_0 
+    left join
+        site_user u1_0 
+            on u1_0.uno=a1_0.uno 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        a1_0.board_ques_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        (
+            ?='ALL' 
+            or cast(u1_0.role as varchar)=?
+        ) 
+        and (
+            lower(u1_0.user_name) like ? escape '' 
+            or lower(u1_0.user_id) like ? escape '' 
+            or lower(u1_0.email) like ? escape ''
+        ) 
+    order by
+        u1_0.user_cdate desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        (
+            ?='ALL' 
+            or cast(u1_0.role as varchar)=?
+        ) 
+        and (
+            lower(u1_0.user_name) like ? escape '' 
+            or lower(u1_0.user_id) like ? escape '' 
+            or lower(u1_0.email) like ? escape ''
+        )
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        (
+            ?='ALL' 
+            or cast(u1_0.role as varchar)=?
+        ) 
+        and (
+            lower(u1_0.user_name) like ? escape '' 
+            or lower(u1_0.user_id) like ? escape '' 
+            or lower(u1_0.email) like ? escape ''
+        ) 
+    order by
+        u1_0.user_cdate desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        (
+            ?='ALL' 
+            or cast(u1_0.role as varchar)=?
+        ) 
+        and (
+            lower(u1_0.user_name) like ? escape '' 
+            or lower(u1_0.user_id) like ? escape '' 
+            or lower(u1_0.email) like ? escape ''
+        )
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        q1_0.quiz_id,
+        q1_0.level_id,
+        q1_0.quiz_title,
+        q1_0.quiz_type,
+        q1_0.total_score 
+    from
+        quiz q1_0 
+    where
+        q1_0.quiz_type=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        qa1_0.attempt_id,
+        qa1_0.attempted_cdate,
+        qa1_0.quiz_id,
+        qa1_0.score,
+        qa1_0.uno 
+    from
+        quiz_attempt qa1_0 
+    where
+        qa1_0.uno=? 
+        and qa1_0.quiz_id=? 
+    order by
+        qa1_0.attempted_cdate desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        q1_0.quiz_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        q1_0.quiz_title,
+        q1_0.quiz_type,
+        q1_0.total_score 
+    from
+        quiz q1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=q1_0.level_id 
+    where
+        q1_0.quiz_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    where
+        l1_0.level_id<=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    left join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    where
+        e1_0.uno=? 
+        and l1_0.level_id=? 
+        and e1_0.is_completed
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    where
+        c1_0.level_id=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0 
+    where
+        c1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        e1_0.enrollment_id,
+        e1_0.classes_id,
+        e1_0.is_completed,
+        e1_0.enrollment_cdate,
+        e1_0.progress,
+        e1_0.uno 
+    from
+        enrollment e1_0 
+    where
+        e1_0.uno=? 
+        and e1_0.is_completed=? 
+    order by
+        e1_0.enrollment_cdate desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.user_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    left join
+        enrollment e1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.uno=? 
+        and (
+            ? is null 
+            or c1_0.level_id=?
+        ) 
+        and (
+            ? is null 
+            or lower(c1_0.title) like lower(('%'||?||'%')) escape ''
+        ) 
+    group by
+        c1_0.classes_id 
+    order by
+        count(e1_0.enrollment_id) desc,
+        c1_0.created_date desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    left join
+        enrollment e1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.uno=? 
+        and (
+            ? is null 
+            or c1_0.level_id=?
+        ) 
+        and (
+            ? is null 
+            or lower(c1_0.title) like lower(('%'||?||'%')) escape ''
+        ) 
+    group by
+        c1_0.classes_id 
+    order by
+        count(e1_0.enrollment_id) desc,
+        c1_0.created_date desc 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        l1_0.level_id,
+        l1_0.level_name,
+        c1_0.title,
+        c1_0.uno,
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l2_0.level_id,
+        l2_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        classes c1_0 
+    join
+        level l1_0 
+            on l1_0.level_id=c1_0.level_id 
+    join
+        site_user u1_0 
+            on u1_0.uno=c1_0.uno 
+    left join
+        level l2_0 
+            on l2_0.level_id=u1_0.level_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        count(e1_0.enrollment_id) 
+    from
+        enrollment e1_0 
+    left join
+        classes c1_0 
+            on c1_0.classes_id=e1_0.classes_id 
+    where
+        c1_0.classes_id=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        l1_0.level_id,
+        l1_0.level_name 
+    from
+        level l1_0 
+    where
+        l1_0.level_id=?
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        l1_0.level_id,
+        l1_0.level_name,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    left join
+        level l1_0 
+            on l1_0.level_id=u1_0.level_id 
+    where
+        u1_0.uno=?
+Hibernate: 
+    select
+        c1_0.classes_id,
+        c1_0.created_date,
+        c1_0.classes_content,
+        c1_0.classes_img,
+        c1_0.classes_video,
+        c1_0.level_id,
+        c1_0.title,
+        c1_0.uno 
+    from
+        classes c1_0 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(c1_0.classes_id) 
+    from
+        classes c1_0
+Hibernate: 
+    select
+        u1_0.uno,
+        u1_0.approved,
+        u1_0.email,
+        u1_0.end_date,
+        u1_0.is_paid,
+        u1_0.level_id,
+        u1_0.password,
+        u1_0.role,
+        u1_0.user_cdate,
+        u1_0.user_id,
+        u1_0.user_name 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=? 
+    order by
+        random() 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        count(u1_0.uno) 
+    from
+        site_user u1_0 
+    where
+        u1_0.role=?

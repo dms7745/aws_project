@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - 포트폴리오 사이트</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-box">
+            <h1>로그인</h1>
+            
+            <% if (error) { %>
+                <div class="error-message"><%= error %></div>
+            <% } %>
+            
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">아이디</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn-login">로그인</button>
+            </form>
+            
+            <div class="test-accounts">
+                <p><strong>테스트 계정:</strong></p>
+                <p>👑<br><strong>관리자:</strong><br>admin / admin123!@#</p>
+                <p>👤<br><strong>운영자:</strong><br>operator1 / admin123!@#</p>
+                <p>👁️<br><strong>뷰어:</strong><br>viewer1 / admin123!@#</p>
+            </div>
+            
+            <a href="/" class="back-link">← 메인 페이지로 돌아가기</a>
+        </div>
+    </div>
+</body>
+</html>
