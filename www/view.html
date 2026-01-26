@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIEW | DAEUN PORTFOLIO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        .spotlight-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, rgba(0, 80, 180, 0.25) 0%, rgba(0, 0, 0, 1) 75%); z-index: -1; }
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1001; }
+        .logo { font-size: 14px; font-weight: 800; letter-spacing: 2px; color: #fff; text-decoration: none; text-transform: uppercase; }
+        main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 150px 10% 50px; }
+        .view-container { width: 100%; max-width: 1000px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(15px); }
+        .view-header { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 20px; margin-bottom: 30px; }
+        .view-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 15px; }
+        .view-info { display: flex; gap: 20px; color: rgba(255, 255, 255, 0.5); font-size: 0.9rem; }
+        .view-content { line-height: 1.8; font-size: 1.1rem; min-height: 300px; color: rgba(255, 255, 255, 0.8); white-space: pre-wrap; }
+        .btn-group { margin-top: 40px; text-align: right; display: flex; justify-content: flex-end; gap: 10px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; height: 45px; padding: 0 30px; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.3s; border: none; }
+        .btn-list { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-edit { background: #333; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .btn-delete { background: rgba(255, 255, 255, 0.25); color: tomato; border: 1px solid rgba(255, 255, 255, 0.2); }
+        .btn:hover { opacity: 0.8; transform: translateY(-1px); }
+    </style>
+</head>
+<body>
+    <div class="spotlight-bg"></div>
+    <header><a href="index.html" class="logo">DAEUN PORTFOLIO</a></header>
+    <main>
+        <div class="view-container">
+            <div class="view-header"><h1 id="vSubject">로딩 중...</h1><div class="view-info"><span>작성자: <span id="vAuthor">-</span></span><span>날짜: <span id="vDate">-</span></span></div></div>
+            <div class="view-content" id="vContent">내용을 불러오고 있습니다.</div>
+            <div class="btn-group">
+                <a href="board.html" class="btn btn-list">LIST</a>
+                <button class="btn btn-edit" onclick="goToEdit()">EDIT</button>
+                <button class="btn btn-delete" onclick="deletePost()">DELETE</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const postNo = params.get('no');
+        let posts = JSON.parse(localStorage.getItem('posts') || '[]');
+        let post = posts.find(p => p.no === postNo);
+
+        window.onload = function() {
+            if (post) {
+                document.getElementById('vSubject').innerText = post.subject;
+                document.getElementById('vAuthor').innerText = post.name;
+                document.getElementById('vDate').innerText = post.date;
+                document.getElementById('vContent').innerText = post.content;
+            }
+        };
+
+        function goToEdit() {
+            sessionStorage.setItem('editTargetNo', postNo);
+            location.href = 'write.html';
+        }
+
+        function deletePost() {
+            if (confirm('정말로 삭제하시겠습니까?')) {
+                const updatedPosts = posts.filter(p => p.no !== postNo);
+                localStorage.setItem('posts', JSON.stringify(updatedPosts));
+                alert('삭제되었습니다.');
+                location.href = 'board.html';
+            }
+        }
+    </script>
+</body>
+</html>
