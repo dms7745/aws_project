@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYPAGE | DAEUN PORTFOLIO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #000; color: #fff; min-height: 100vh; }
+        .spotlight-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, rgba(0, 80, 180, 0.15) 0%, rgba(0, 0, 0, 1) 75%); z-index: -1; }
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1001; }
+        .logo { font-size: 16px; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 2px; }
+        .top-nav { display: flex; gap: 30px; }
+        .top-nav a { font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .top-nav a:hover { color: #fff; }
+        main { padding: 150px 60px 60px; display: flex; flex-direction: column; align-items: center; }
+        .mypage-container { width: 100%; max-width: 500px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(15px); }
+        h1 { text-align: center; margin-bottom: 30px; font-size: 24px; font-weight: 800; letter-spacing: 2px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 8px; text-transform: uppercase; font-weight: 600; }
+        .form-group input { width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #fff; outline: none; font-size: 14px; }
+        .form-group input:focus { border-color: rgba(255, 255, 255, 0.3); }
+        .form-group input:disabled { background: rgba(255, 255, 255, 0.02); color: rgba(255, 255, 255, 0.5); }
+        .btn-group { display: flex; gap: 10px; margin-top: 30px; }
+        .btn { flex: 1; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 14px; transition: 0.3s; }
+        .btn-primary { background: #fff; color: #000; }
+        .btn-primary:hover { background: rgba(255, 255, 255, 0.8); }
+        .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+        .btn-danger { background: rgba(255, 50, 50, 0.2); color: #ff6b6b; border: 1px solid rgba(255, 50, 50, 0.3); }
+        .btn-danger:hover { background: rgba(255, 50, 50, 0.3); }
+        .message { text-align: center; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 14px; display: none; }
+        .message.error { display: block; background: rgba(255, 50, 50, 0.2); color: #ff6b6b; border: 1px solid rgba(255, 50, 50, 0.3); }
+        .message.success { display: block; background: rgba(50, 255, 50, 0.2); color: #6bff6b; border: 1px solid rgba(50, 255, 50, 0.3); }
+        .divider { height: 1px; background: rgba(255, 255, 255, 0.1); margin: 30px 0; }
+        .section-title { font-size: 14px; color: rgba(255, 255, 255, 0.5); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+    <div class="spotlight-bg"></div>
+    <header>
+        <a href="index.html" class="logo">DAEUN PORTFOLIO</a>
+        <nav class="top-nav">
+            <a href="index.html">HOME</a>
+            <a href="board.html">BOARD</a>
+            <a href="#" id="logoutBtn">LOGOUT</a>
+        </nav>
+    </header>
+    <main>
+        <div class="mypage-container">
+            <h1>MYPAGE</h1>
+            <div class="message" id="message"></div>
+            
+            <div class="section-title">회원 정보</div>
+            <div class="form-group">
+                <label>ID</label>
+                <input type="text" id="userId" disabled>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="userEmail">
+            </div>
+            
+            <div class="divider"></div>
+            
+            <div class="section-title">비밀번호 변경</div>
+            <div class="form-group">
+                <label>현재 비밀번호</label>
+                <input type="password" id="currentPw" placeholder="현재 비밀번호 입력">
+            </div>
+            <div class="form-group">
+                <label>새 비밀번호</label>
+                <input type="password" id="newPw" placeholder="새 비밀번호 입력">
+            </div>
+            <div class="form-group">
+                <label>새 비밀번호 확인</label>
+                <input type="password" id="confirmPw" placeholder="새 비밀번호 다시 입력">
+            </div>
+            
+            <div class="btn-group">
+                <button class="btn btn-secondary" onclick="location.href='index.html'">취소</button>
+                <button class="btn btn-primary" onclick="updateProfile()">저장</button>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <button class="btn btn-danger" style="width:100%;" onclick="deleteAccount()">회원 탈퇴</button>
+        </div>
+    </main>
+
+<script>
+    var currentUser = null;
+
+    window.onload = function() {
+        var user = localStorage.getItem('user');
+        if (!user) {
+            alert('로그인이 필요합니다.');
+            location.href = 'login.html';
+            return;
+        }
+        currentUser = JSON.parse(user);
+        document.getElementById("userId").value = currentUser.userId;
+        // 서버에서 최신 정보 가져오기
+        fetch("/api/users/" + currentUser.id)
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data.success) {
+                    document.getElementById("userEmail").value = data.user.email || "";
+                    currentUser.email = data.user.email;
+                    localStorage.setItem("user", JSON.stringify(currentUser));
+                }
+            });
+    };
+
+    document.getElementById('logoutBtn').onclick = function() {
+        localStorage.removeItem('user');
+        location.href = 'index.html';
+    };
+
+    function showMessage(text, type) {
+        var msg = document.getElementById('message');
+        msg.textContent = text;
+        msg.className = 'message ' + type;
+    }
+
+    function updateProfile() {
+        var email = document.getElementById('userEmail').value;
+        var currentPw = document.getElementById('currentPw').value;
+        var newPw = document.getElementById('newPw').value;
+        var confirmPw = document.getElementById('confirmPw').value;
+
+        if (newPw && newPw !== confirmPw) {
+            showMessage('새 비밀번호가 일치하지 않습니다.', 'error');
+            return;
+        }
+
+        if (newPw && !currentPw) {
+            showMessage('현재 비밀번호를 입력해주세요.', 'error');
+            return;
+        }
+
+        fetch('/api/users/' + currentUser.id, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: email,
+                currentPassword: currentPw,
+                newPassword: newPw
+            })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            if (data.success) {
+                showMessage('회원정보가 수정되었습니다.', 'success');
+                currentUser.email = email;
+                localStorage.setItem('user', JSON.stringify(currentUser));
+                document.getElementById('currentPw').value = '';
+                document.getElementById('newPw').value = '';
+                document.getElementById('confirmPw').value = '';
+            } else {
+                showMessage(data.message || '수정에 실패했습니다.', 'error');
+            }
+        })
+        .catch(function(err) {
+            showMessage('서버 오류가 발생했습니다.', 'error');
+        });
+    }
+
+    function deleteAccount() {
+        if (!confirm('정말 탈퇴하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) return;
+        
+        var password = prompt('비밀번호를 입력해주세요:');
+        if (!password) return;
+
+        fetch('/api/users/' + currentUser.id, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: password })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            if (data.success) {
+                alert('회원 탈퇴가 완료되었습니다.');
+                localStorage.removeItem('user');
+                location.href = 'index.html';
+            } else {
+                showMessage(data.message || '탈퇴에 실패했습니다.', 'error');
+            }
+        })
+        .catch(function(err) {
+            showMessage('서버 오류가 발생했습니다.', 'error');
+        });
+    }
+</script>
+</body>
+</html>

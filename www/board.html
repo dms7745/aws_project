@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOARD | DAEUN PORTFOLIO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        .spotlight-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, rgba(0, 80, 180, 0.25) 0%, rgba(0, 0, 0, 1) 75%); z-index: -1; }
+        header { position: fixed; top: 0; left: 0; width: 100%; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 1001; }
+        .logo { font-size: 20px; font-weight: 800; letter-spacing: 2px; color: #fff; text-decoration: none; text-transform: uppercase; }
+        .top-nav { display: flex; gap: 30px; }
+        .top-nav a { font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.7); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .top-nav a:hover { color: #fff; }
+        main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 150px 10% 50px; }
+        .board-container { width: 100%; max-width: 1000px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 30px; backdrop-filter: blur(15px); }
+        .board-table { width: 100%; border-collapse: collapse; color: #fff; }
+        .board-table th { padding: 20px 15px; border-bottom: 2px solid rgba(255, 255, 255, 0.1); text-align: left; font-size: 0.9rem; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; }
+        .board-table td { padding: 20px 15px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .btn-write { display: inline-flex; align-items: center; justify-content: center; height: 45px; padding: 0 30px; background: #333; color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: 0.3s; }
+        .btn-write:hover { background: #444; transform: translateY(-1px); }
+        
+        /* 페이징 스타일 */
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 5px; }
+        .pagination button { width: 36px; height: 36px; border: 1px solid rgba(255, 255, 255, 0.2); background: transparent; color: rgba(255, 255, 255, 0.6); border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: 0.3s; }
+        .pagination button:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+        .pagination button.active { background: #0066cc; border-color: #0066cc; color: #fff; }
+        .pagination button:disabled { opacity: 0.3; cursor: not-allowed; }
+        .board-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+    </style>
+</head>
+
+<body>
+    <div class="spotlight-bg"></div>
+    <header>
+        <a href="index.html" class="logo">DAEUN PORTFOLIO</a>
+        <nav class="top-nav">
+            <a href="index.html">HOME</a>
+            <a href="mypage.html" id="mypageBtn" style="display:none;">MYPAGE</a>
+            <a href="login.html" id="loginBtn">LOGIN</a>
+            <a href="#" id="logoutBtn" style="display:none;">LOGOUT</a>
+        </nav>
+    </header>
+    <main>
+        <div style="width:100%; max-width:1000px; margin-bottom:40px;">
+            <h1><a href="board.html" onclick="goToFirstPage(); return false;" style="color:#fff; text-decoration:none; cursor:pointer;">BOARD</a></h1>
+        </div>
+        <div class="board-container">
+            <table class="board-table">
+                <thead>
+                    <tr>
+                        <th style="width:10%">NO</th>
+                        <th>SUBJECT</th>
+                        <th style="width:15%">NAME</th>
+                        <th style="width:20%">DATE</th>
+                    </tr>
+                </thead>
+                <tbody id="postList"></tbody>
+            </table>
+            <div class="board-footer">
+                <div class="pagination" id="pagination"></div>
+                <a href="#" class="btn-write" onclick="goToWrite()">WRITE</a>
+            </div>
+        </div>
+    </main>
+<script>
+    var allPosts = [];
+    var currentPage = 1;
+    var postsPerPage = 10;
+
+    window.onload = function () {
+        // URL에서 page 파라미터 읽기
+        var params = new URLSearchParams(window.location.search);
+        var pageParam = params.get('page');
+        if (pageParam) {
+            currentPage = parseInt(pageParam) || 1;
+        }
+
+        fetch('/api/posts')
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                allPosts = data.posts || [];
+                var totalPages = Math.ceil(allPosts.length / postsPerPage);
+                if (currentPage > totalPages && totalPages > 0) {
+                    currentPage = totalPages;
+                }
+                renderPage(currentPage);
+            })
+            .catch(function(err) {
+                console.error('불러오기 오류:', err);
+                document.getElementById('postList').innerHTML = '<tr><td colspan="4" style="text-align:center; color:red;">데이터를 불러오지 못했습니다.</td></tr>';
+            });
+    };
+
+    function renderPage(page) {
+        currentPage = page;
+        var tbody = document.getElementById('postList');
+        var totalPosts = allPosts.length;
+        var totalPages = Math.ceil(totalPosts / postsPerPage);
+        
+        if (totalPosts === 0) {
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align:center; padding:50px; color:rgba(255,255,255,0.3);">등록된 게시글이 없습니다.</td></tr>';
+            document.getElementById('pagination').innerHTML = '';
+            return;
+        }
+        
+        var startIndex = (page - 1) * postsPerPage;
+        var endIndex = Math.min(startIndex + postsPerPage, totalPosts);
+        var pagePosts = allPosts.slice(startIndex, endIndex);
+        
+        tbody.innerHTML = '';
+        pagePosts.forEach(function(post, index) {
+            var postNumber = totalPosts - startIndex - index;
+            var row = '<tr>' +
+                '<td>' + postNumber + '</td>' +
+                '<td><a href="view.html?id=' + post.id + '" style="color:#fff; text-decoration:none;">' + post.subject + '</a></td>' +
+                '<td>' + post.name + '</td>' +
+                '<td>' + post.date + '</td>' +
+            '</tr>';
+            tbody.insertAdjacentHTML('beforeend', row);
+        });
+        
+        renderPagination(totalPages);
+        
+        // URL 업데이트 (뒤로가기 지원)
+        history.replaceState(null, '', '?page=' + page);
+    }
+
+    function renderPagination(totalPages) {
+        var pagination = document.getElementById('pagination');
+        var html = '';
+        
+        if (totalPages <= 1) {
+            pagination.innerHTML = '';
+            return;
+        }
+        
+        // 이전 버튼
+        html += '<button onclick="goToPage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>&lt;</button>';
+        
+        // 페이지 번호
+        var startPage = Math.max(1, currentPage - 2);
+        var endPage = Math.min(totalPages, startPage + 4);
+        
+        if (endPage - startPage < 4) {
+            startPage = Math.max(1, endPage - 4);
+        }
+        
+        for (var i = startPage; i <= endPage; i++) {
+            html += '<button onclick="goToPage(' + i + ')" class="' + (i === currentPage ? 'active' : '') + '">' + i + '</button>';
+        }
+        
+        // 다음 버튼
+        html += '<button onclick="goToPage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>&gt;</button>';
+        
+        pagination.innerHTML = html;
+    }
+
+    function goToFirstPage() {
+        currentPage = 1;
+        history.replaceState(null, "", "board.html");
+        renderPage(1);
+        window.scrollTo(0, 0);
+    }
+
+    function goToWrite() {
+        var user = localStorage.getItem("user");
+        if (!user) {
+            alert("로그인이 필요합니다.");
+            return;
+        }
+        location.href = "write.html";
+    }
+
+    function goToPage(page) {
+        var totalPages = Math.ceil(allPosts.length / postsPerPage);
+        if (page < 1 || page > totalPages) return;
+        renderPage(page);
+    }
+    // 로그인 상태 체크
+    var user = localStorage.getItem("user");
+    if (user) {
+        document.getElementById("loginBtn").style.display = "none";
+        document.getElementById("mypageBtn").style.display = "inline-block";
+        document.getElementById("logoutBtn").style.display = "inline-block";
+        document.getElementById("logoutBtn").onclick = function() { localStorage.removeItem("user"); location.reload(); };
+    }
+</script>
+</body>
+
+</html>

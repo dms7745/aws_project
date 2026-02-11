@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN | DAEUN PORTFOLIO</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #000; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #fff; }
+        .spotlight-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% 40%, rgba(0, 80, 180, 0.15) 0%, rgba(0, 0, 0, 1) 75%); z-index: -1; }
+        .login-box { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; border-radius: 20px; width: 400px; backdrop-filter: blur(15px); }
+        h2 { text-align: center; margin-bottom: 30px; font-weight: 800; letter-spacing: 2px; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-bottom: 8px; text-transform: uppercase; font-weight: 600; }
+        input { width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; color: #fff; box-sizing: border-box; outline: none; }
+        input:focus { border-color: rgba(255, 255, 255, 0.3); }
+        .btn-login { width: 100%; padding: 15px; background: #fff; color: #000; border: none; border-radius: 8px; cursor: pointer; font-weight: 800; margin-top: 10px; transition: 0.3s; }
+        .btn-login:hover { background: rgba(255, 255, 255, 0.8); }
+        .btn-login:disabled { background: rgba(255, 255, 255, 0.3); cursor: not-allowed; }
+        .footer-links { text-align: center; margin-top: 25px; font-size: 13px; }
+        .footer-links a { color: rgba(255, 255, 255, 0.4); text-decoration: none; margin: 0 10px; transition: 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .message { text-align: center; padding: 10px; border-radius: 8px; margin: 15px 0; font-size: 14px; display: none; }
+        .message.error { display: block; background: rgba(255, 50, 50, 0.2); color: #ff6b6b; border: 1px solid rgba(255, 50, 50, 0.3); }
+        .message.success { display: block; background: rgba(50, 255, 50, 0.2); color: #6bff6b; border: 1px solid rgba(50, 255, 50, 0.3); }
+        .user-info { text-align: center; padding: 20px; }
+        .user-info h3 { margin-bottom: 15px; color: rgba(255, 255, 255, 0.8); }
+        .btn-logout { display: inline-block; padding: 12px 30px; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 8px; cursor: pointer; font-weight: 600; transition: 0.3s; margin: 5px; text-decoration: none; }
+        .btn-logout:hover { background: rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body>
+    <div class="spotlight-bg"></div>
+    <div class="login-box">
+        <div id="loginSection">
+            <h2>LOGIN</h2>
+            <div class="message" id="message"></div>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>ID</label>
+                    <input type="text" id="userId" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="userPw" required>
+                </div>
+                <button type="submit" class="btn-login" id="submitBtn">LOGIN</button>
+            </form>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="join.html">Join</a>
+            </div>
+        </div>
+        <div id="loggedInSection" style="display: none;">
+            <h2>WELCOME</h2>
+            <div class="user-info">
+                <h3 id="welcomeUser"></h3>
+                <a href="board.html" class="btn-logout">BOARD</a>
+                <button class="btn-logout" onclick="logout()">LOGOUT</button>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </div>
+<script>
+    window.onload = function() {
+    };
+
+    function checkLoginStatus() {
+        var user = localStorage.getItem('user');
+        if (user) {
+            user = JSON.parse(user);
+            document.getElementById('loginSection').style.display = 'none';
+            document.getElementById('loggedInSection').style.display = 'block';
+            document.getElementById('welcomeUser').textContent = user.userId + '님 환영합니다!';
+        }
+    }
+
+    document.getElementById('loginForm').onsubmit = function(e) {
+        e.preventDefault();
+        
+        var userId = document.getElementById('userId').value.trim();
+        var password = document.getElementById('userPw').value;
+        var submitBtn = document.getElementById('submitBtn');
+        
+        if (!userId || !password) {
+            showMessage('아이디와 비밀번호를 입력해주세요.', 'error');
+            return;
+        }
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'LOGGING IN...';
+        
+        fetch('/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: userId, password: password })
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+            if (data.success) {
+                localStorage.setItem('user', JSON.stringify(data.user));
+                showMessage('로그인 성공!', 'success');
+                window.location.href = 'index.html';
+            } else {
+                showMessage(data.message || '로그인에 실패했습니다.', 'error');
+            }
+        })
+        .catch(function(err) {
+            console.error('Error:', err);
+            showMessage('서버 오류가 발생했습니다.', 'error');
+        })
+        .finally(function() {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'LOGIN';
+        });
+    };
+
+    function showMessage(text, type) {
+        var message = document.getElementById('message');
+        message.textContent = text;
+        message.className = 'message ' + type;
+    }
+
+    function logout() {
+        localStorage.removeItem('user');
+        document.getElementById('loginSection').style.display = 'block';
+        document.getElementById('loggedInSection').style.display = 'none';
+        document.getElementById('userId').value = '';
+        document.getElementById('userPw').value = '';
+        document.getElementById('message').className = 'message';
+    }
+</script>
+</body>
+</html>
